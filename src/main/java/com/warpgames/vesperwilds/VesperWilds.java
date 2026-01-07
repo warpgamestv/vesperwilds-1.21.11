@@ -1,9 +1,9 @@
 package com.warpgames.vesperwilds;
 
+import com.warpgames.vesperwilds.worldgen.VesperRegion;
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +20,7 @@ public class VesperWilds implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks(); // <-- ADD THIS LINE
+		ModBiomes.registerBiomes();
 
 		// Add to Creative Tab
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(content -> {
@@ -27,9 +28,7 @@ public class VesperWilds implements ModInitializer {
 			content.accept(ModItems.GLINT_BERRIES);
 		});
 
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
-			content.accept(ModItems.VELVET_LOG);
-		});
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> content.accept(ModItems.VELVET_LOG));
 
 		LOGGER.info("Hello Fabric world!");
 	}

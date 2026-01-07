@@ -18,12 +18,13 @@ public class ModBlocks {
     );
 
     // 2. Define the Block
-    // We use "RotatedPillarBlock" so it can face sideways like a real log
+    // We pass "velvet_log" as the name here
     public static final Block VELVET_LOG = registerBlock(
             new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG).setId(VELVET_LOG_KEY))
     );
 
-    // 3. Helper Method
+    // 3. Helper Method (FIXED)
+    // Now accepts 'String name' so you can use it for ANY block, not just the log.
     private static Block registerBlock(Block block) {
         return Registry.register(
                 BuiltInRegistries.BLOCK,

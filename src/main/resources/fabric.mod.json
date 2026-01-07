@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/vesperwilds/icon.png",
+	"icon": "assets/vesper_wilds/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"com.warpgames.vesperwilds.VesperWildsDataGenerator"
+		],
+		"terrablender": [
+			"com.warpgames.vesperwilds.VesperTerraBlender"
 		]
 	},
 	"mixins": [
@@ -29,6 +32,7 @@
 		"fabricloader": ">=0.18.4",
 		"minecraft": "~1.21.11",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"terrablender": "*"
 	}
 }
