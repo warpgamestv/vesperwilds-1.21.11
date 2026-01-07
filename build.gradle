@@ -39,6 +39,12 @@ dependencies {
 }
 
 processResources {
+	// This tells Gradle: "If you see a file twice, just pick one and don't crash."
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+	// This tells Gradle: "Don't put the data generator cache in my game JAR."
+	exclude '.cache'
+
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
@@ -59,5 +65,15 @@ java {
 jar {
 	from("LICENSE") {
 		rename { "${it}_${base.archivesName.get()}"}
+	}
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDirs += [
+					'src/main/generated'
+			]
+		}
 	}
 }

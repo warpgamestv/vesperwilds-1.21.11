@@ -18,6 +18,8 @@
 		"main": [
 			"com.warpgames.vesperwilds.VesperWilds"
 		],
+		"client": [ "com.warpgames.vesperwilds.VesperWildsClient"
+		],
 		"fabric-datagen": [
 			"com.warpgames.vesperwilds.VesperWildsDataGenerator"
 		],

@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "minecraft:visual/sky_color": 4078420,
+    "minecraft:visual/fog_color": 14734302,
+    "minecraft:visual/water_fog_color": 3025474
+  },
+  "temperature": 0,
+  "downfall": 0,
+  "has_precipitation": true,
+  "temperature_modifier": "none",
+  "effects": {
+    "water_color": 6248832,
+    "grass_color": 8364923
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": [],
+  "features": [
+    [
+      "vesper_wilds:velvet_tree",
+      "vesper_wilds:mega_vesper_tree",
+      "vesper_wilds:placed_feature/glint_berry_patch"
+    ]
+  ]
+}

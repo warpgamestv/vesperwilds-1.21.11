@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "vesper_wilds:block/velvet_leaves"
+  }
+}
