@@ -1,8 +1,6 @@
 package com.warpgames.vesperwilds;
 
-import com.warpgames.vesperwilds.datagen.ModWorldGenerator; // Import this!
-import com.warpgames.vesperwilds.datagen.VesperModelProvider;
-import com.warpgames.vesperwilds.datagen.VesperRecipeProvider;
+import com.warpgames.vesperwilds.datagen.*;
 import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
 import com.warpgames.vesperwilds.worldgen.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -19,6 +17,8 @@ public class VesperWildsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModWorldGenerator::new);
 		pack.addProvider(VesperRecipeProvider::new);
 		pack.addProvider(VesperModelProvider::new);
+		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModLootTableProvider::new);
 	}
 
 	// ADD THIS METHOD:

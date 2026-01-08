@@ -1,0 +1,15 @@
+// 1.21.11	-999999999-01-01T00:00:00	VesperWilds/Tags for minecraft:block
+770c006d2c58072823de760a062a0a25ea9d97ab data/minecraft/tags/block/doors.json
+de1d9dd18addddcdff4319f75f28eead1e7dbd5f data/minecraft/tags/block/fence_gates.json
+109bdb08a55e39622471c8936f5109bb06f634ef data/minecraft/tags/block/fences.json
+4829bb9785b0453cc741138f26cea33850bb18e4 data/minecraft/tags/block/mineable/pickaxe.json
+4829bb9785b0453cc741138f26cea33850bb18e4 data/minecraft/tags/block/needs_iron_tool.json
+f7b96887ecd95b1defd267556c38c7566f2a87c8 data/minecraft/tags/block/planks.json
+33a9a1881e5459e5d47c1f68bf96501d5bb9a641 data/minecraft/tags/block/trapdoors.json
+e82241ae76c44e1e402f948fa5d96ba1a6917e3f data/minecraft/tags/block/wooden_buttons.json
+770c006d2c58072823de760a062a0a25ea9d97ab data/minecraft/tags/block/wooden_doors.json
+109bdb08a55e39622471c8936f5109bb06f634ef data/minecraft/tags/block/wooden_fences.json
+e9510145ec784b32d5a66ffcef48d15b9f9ce54d data/minecraft/tags/block/wooden_pressure_plates.json
+2d4d128a747ae8e5d264635e807b5b66626a4bf0 data/minecraft/tags/block/wooden_slabs.json
+e0aed0940df0e9c014787cbc5559ed4bdbd373ff data/minecraft/tags/block/wooden_stairs.json
+33a9a1881e5459e5d47c1f68bf96501d5bb9a641 data/minecraft/tags/block/wooden_trapdoors.json

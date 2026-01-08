@@ -12,5 +12,7 @@ public class VesperWildsClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(ModBlocks.VELVET_LEAVES, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.VELVET_SAPLING, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.GLINT_BERRY_BUSH, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.VELVET_DOOR, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.VELVET_TRAPDOOR, ChunkSectionLayer.CUTOUT);
     }
 }

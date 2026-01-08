@@ -11,7 +11,9 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.Optional; // Important Import!
 
@@ -128,36 +130,32 @@ public class ModBlocks {
                             .noCollision()
             )
     );
-
-    // --- VESPERITE ORE (Stone) ---
     public static final ResourceKey<Block> VESPERITE_ORE_KEY = ResourceKey.create(
             BuiltInRegistries.BLOCK.key(),
             Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "vesperite_ore")
     );
-    public static final Block VESPERITE_ORE = registerBlock("vesperite_ore",
-            new DropExperienceBlock(
-                    ConstantInt.of(2), // Drops 2 XP
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)
-                            .setId(VESPERITE_ORE_KEY)
-                            .requiresCorrectToolForDrops()
-                            .strength(3.0F, 3.0F) // Hardness
-            )
-    );
 
-    // --- DEEPSLATE VESPERITE ORE ---
+    public static final Block VESPERITE_ORE = registerBlock("vesperite_ore",
+            new Block(Block.Properties.of()
+                    .setId(VESPERITE_ORE_KEY) // <--- THIS WAS MISSING
+                    .mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0f, 3.0f)));
+
+    // --- DEEPSLATE ORE ---
     public static final ResourceKey<Block> DEEPSLATE_VESPERITE_ORE_KEY = ResourceKey.create(
             BuiltInRegistries.BLOCK.key(),
             Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "deepslate_vesperite_ore")
     );
+
     public static final Block DEEPSLATE_VESPERITE_ORE = registerBlock("deepslate_vesperite_ore",
-            new DropExperienceBlock(
-                    ConstantInt.of(2),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
-                            .setId(DEEPSLATE_VESPERITE_ORE_KEY)
-                            .requiresCorrectToolForDrops()
-                            .strength(4.5F, 3.0F) // Harder than stone ore
-            )
-    );
+            new Block(Block.Properties.of()
+                    .setId(DEEPSLATE_VESPERITE_ORE_KEY) // <--- THIS WAS MISSING
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(4.5f, 3.0f)));
 
     // --- HELPER METHOD ---
     private static Block registerBlock(String name, Block block) {

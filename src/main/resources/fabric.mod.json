@@ -3,13 +3,13 @@
 	"id": "vesper_wilds",
 	"version": "${version}",
 	"name": "VesperWilds",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Vesper Wilds is a hobby mod hopefully to be made full fledged! This is purely just me learning java!",
 	"authors": [
-		"Me!"
+		"WarpGamesTV"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://warpgamestv.com",
+		"sources": "https://github.com/warpgamestv/vesperwilds-1.21.11"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/vesper_wilds/icon.png",
