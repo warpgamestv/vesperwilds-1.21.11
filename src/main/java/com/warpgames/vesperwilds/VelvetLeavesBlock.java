@@ -1,20 +1,18 @@
 package com.warpgames.vesperwilds;
 
 import com.mojang.serialization.MapCodec;
+import com.warpgames.vesperwilds.ModParticles;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class VelvetLeavesBlock extends LeavesBlock {
-    // 1. Define the Codec
     public static final MapCodec<VelvetLeavesBlock> CODEC = simpleCodec(VelvetLeavesBlock::new);
 
     public VelvetLeavesBlock(BlockBehaviour.Properties properties) {
-        // FIX IS HERE: We added '0.5F' as the first argument.
-        // This tells the game how often particles should spawn (0.5 is standard).
         super(0.5F, properties);
     }
 
@@ -23,19 +21,29 @@ public class VelvetLeavesBlock extends LeavesBlock {
         return CODEC;
     }
 
-    // 2. Define the Particles
+    // --- DEBUG: Override animateTick DIRECTLY ---
+    // This bypasses the parent "LeavesBlock" logic entirely.
+    // It ignores "isFaceFull" (so it works on the ground).
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        // Run standard leaf logic (water drips, etc.)
+        super.animateTick(state, level, pos, random);
+
+        // FORCE SPAWN: 1 in 10 chance per tick (Very frequent)
+        if (random.nextInt(10) == 0) {
+            // Spawn BELOW the block
+            double x = pos.getX() + random.nextDouble();
+            double z = pos.getZ() + random.nextDouble();
+            double y = pos.getY() - 0.1D;
+
+            level.addParticle(ModParticles.VELVET_FALLING_LEAF, x, y, z, 0.0D, 0.0D, 0.0D);
+        }
+    }
+
+    // We still keep this to satisfy the abstract class requirement,
+    // but our custom animateTick above does the real work now.
     @Override
     public void spawnFallingLeavesParticle(Level level, BlockPos pos, RandomSource random) {
-        if (random.nextInt(15) == 0) {
-            BlockPos blockPos = pos.below();
-            if (level.getBlockState(blockPos).canBeReplaced() || level.getBlockState(blockPos).isSolid()) {
-                // Using Cherry Leaves particles for now (pink falling petals)
-                level.addParticle(ParticleTypes.CHERRY_LEAVES,
-                        pos.getX() + random.nextDouble(),
-                        pos.getY() - 0.2D,
-                        pos.getZ() + random.nextDouble(),
-                        0.0D, 0.0D, 0.0D);
-            }
-        }
+        // Empty
     }
 }

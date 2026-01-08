@@ -39,11 +39,7 @@ dependencies {
 }
 
 processResources {
-	// This tells Gradle: "If you see a file twice, just pick one and don't crash."
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-	// This tells Gradle: "Don't put the data generator cache in my game JAR."
-	exclude '.cache'
 
 	inputs.property "version", project.version
 
@@ -66,6 +62,11 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${base.archivesName.get()}"}
 	}
+}
+
+sourcesJar {
+	exclude '.cache/**' // Don't include the cache folder
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE // If you find duplicates, just pick one and move on
 }
 
 sourceSets {

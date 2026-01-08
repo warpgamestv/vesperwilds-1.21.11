@@ -49,6 +49,7 @@ public class VesperWilds implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBiomes.registerBiomes();
+		ModParticles.registerParticles();
 
 		// Note: TerraBlender registration is now handled in VesperTerraBlender.java
 
