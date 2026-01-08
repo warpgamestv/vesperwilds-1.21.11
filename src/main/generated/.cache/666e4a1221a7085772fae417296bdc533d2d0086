@@ -1,5 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	VesperWilds/Vesper Wilds World Generator
+4f3c3bc77f8fa8d9d89cd21fcef5a0a84a61aed6 data/vesper_wilds/worldgen/configured_feature/glint_berry_patch.json
 c20de921ee4453dbc0244363a694bafb07fdeb06 data/vesper_wilds/worldgen/configured_feature/mega_vesper_tree.json
 8a9d346cbeebbd896789457cae3550706bf7bf6c data/vesper_wilds/worldgen/configured_feature/velvet_tree.json
+0f641ab5b3e536d5589815319ec5e427097ce974 data/vesper_wilds/worldgen/placed_feature/glint_berry_patch.json
 0375f87cd7202186be7db0c602e3d1f5db4a9c48 data/vesper_wilds/worldgen/placed_feature/mega_vesper_tree.json
 35875fce2476b381f798cfd69a37eba2a465e82b data/vesper_wilds/worldgen/placed_feature/velvet_tree.json

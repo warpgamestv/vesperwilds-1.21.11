@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "vesper_wilds:block/velvet_log_top",
+    "side": "vesper_wilds:block/velvet_log"
+  }
+}

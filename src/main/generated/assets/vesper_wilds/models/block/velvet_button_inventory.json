@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "vesper_wilds:block/velvet_planks"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vesper_wilds:velvet_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_velvet_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vesper_wilds:velvet_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_velvet_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vesper_wilds:velvet_planks"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vesper_wilds:block/velvet_slab"
+    },
+    "type=double": {
+      "model": "vesper_wilds:block/velvet_planks"
+    },
+    "type=top": {
+      "model": "vesper_wilds:block/velvet_slab_top"
+    }
+  }
+}

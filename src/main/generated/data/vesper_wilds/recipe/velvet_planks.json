@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "vesper_wilds:velvet_log"
+  ],
+  "result": {
+    "count": 4,
+    "id": "vesper_wilds:velvet_planks"
+  }
+}

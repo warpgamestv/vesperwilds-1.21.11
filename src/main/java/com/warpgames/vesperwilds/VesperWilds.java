@@ -25,11 +25,21 @@ public class VesperWilds implements ModInitializer {
 					.displayItems((context, entries) -> {
 						// Add all your items here!
 						entries.accept(ModItems.RAW_VESPERITE);
+						entries.accept(ModItems.VESPERITE_ORE_ITEM);
+						entries.accept(ModItems.DEEPSLATE_VESPERITE_ORE_ITEM);
 						entries.accept(ModItems.GLINT_BERRIES);
 						entries.accept(ModItems.VELVET_LOG);
 						entries.accept(ModItems.VELVET_PLANKS);
 						entries.accept(ModItems.VELVET_LEAVES);
 						entries.accept(ModItems.VELVET_SAPLING);
+						entries.accept(ModItems.VELVET_STAIRS_ITEM);
+						entries.accept(ModItems.VELVET_DOOR_ITEM);
+						entries.accept(ModItems.VELVET_FENCE_GATE_ITEM);
+						entries.accept(ModItems.VELVET_FENCE_ITEM);
+						entries.accept(ModItems.VELVET_TRAPDOOR_ITEM);
+						entries.accept(ModItems.VELVET_BUTTON_ITEM);
+						entries.accept(ModItems.VELVET_PRESSURE_PLATE_ITEM);
+						entries.accept(ModItems.VELVET_SLAB_ITEM);
 					})
 					.build()
 	);

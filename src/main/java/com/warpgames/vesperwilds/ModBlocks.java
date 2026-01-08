@@ -5,14 +5,14 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
+
 import java.util.Optional; // Important Import!
 
 public class ModBlocks {
@@ -34,6 +34,48 @@ public class ModBlocks {
     public static final Block VELVET_PLANKS = registerBlock("velvet_planks",
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(VELVET_PLANKS_KEY))
     );
+
+    // --- VELVET WOOD FAMILY ---
+
+    // 1. Stairs (Copies properties from Planks)
+    public static final ResourceKey<Block> VELVET_STAIRS_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_stairs"));
+    public static final Block VELVET_STAIRS = registerBlock("velvet_stairs",
+            new StairBlock(VELVET_PLANKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(VELVET_PLANKS).setId(VELVET_STAIRS_KEY)));
+
+    // 2. Slab
+    public static final ResourceKey<Block> VELVET_SLAB_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_slab"));
+    public static final Block VELVET_SLAB = registerBlock("velvet_slab",
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(VELVET_PLANKS).setId(VELVET_SLAB_KEY)));
+
+    // 3. Fence
+    public static final ResourceKey<Block> VELVET_FENCE_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_fence"));
+    public static final Block VELVET_FENCE = registerBlock("velvet_fence",
+            new FenceBlock(BlockBehaviour.Properties.ofFullCopy(VELVET_PLANKS).setId(VELVET_FENCE_KEY)));
+
+    // 4. Fence Gate
+    public static final ResourceKey<Block> VELVET_FENCE_GATE_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_fence_gate"));
+    public static final Block VELVET_FENCE_GATE = registerBlock("velvet_fence_gate",
+            new FenceGateBlock(WoodType.OAK, BlockBehaviour.Properties.ofFullCopy(VELVET_PLANKS).setId(VELVET_FENCE_GATE_KEY)));
+
+    // 5. Door (Requires BlockSetType - using OAK defaults for now)
+    public static final ResourceKey<Block> VELVET_DOOR_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_door"));
+    public static final Block VELVET_DOOR = registerBlock("velvet_door",
+            new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR).setId(VELVET_DOOR_KEY)));
+
+    // 6. Trapdoor
+    public static final ResourceKey<Block> VELVET_TRAPDOOR_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_trapdoor"));
+    public static final Block VELVET_TRAPDOOR = registerBlock("velvet_trapdoor",
+            new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).setId(VELVET_TRAPDOOR_KEY)));
+
+    // 7. Button
+    public static final ResourceKey<Block> VELVET_BUTTON_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_button"));
+    public static final Block VELVET_BUTTON = registerBlock("velvet_button",
+            new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON).setId(VELVET_BUTTON_KEY)));
+
+    // 8. Pressure Plate
+    public static final ResourceKey<Block> VELVET_PRESSURE_PLATE_KEY = ResourceKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_pressure_plate"));
+    public static final Block VELVET_PRESSURE_PLATE = registerBlock("velvet_pressure_plate",
+            new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE).setId(VELVET_PRESSURE_PLATE_KEY)));
 
     // --- VELVET LEAVES ---
     public static final ResourceKey<Block> VELVET_LEAVES_KEY = ResourceKey.create(
@@ -84,6 +126,36 @@ public class ModBlocks {
                             .lightLevel(state -> state.getValue(GlintBerryBushBlock.AGE) == 3 ? 5 : 0) // Glow logic
                             .noOcclusion()
                             .noCollision()
+            )
+    );
+
+    // --- VESPERITE ORE (Stone) ---
+    public static final ResourceKey<Block> VESPERITE_ORE_KEY = ResourceKey.create(
+            BuiltInRegistries.BLOCK.key(),
+            Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "vesperite_ore")
+    );
+    public static final Block VESPERITE_ORE = registerBlock("vesperite_ore",
+            new DropExperienceBlock(
+                    ConstantInt.of(2), // Drops 2 XP
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)
+                            .setId(VESPERITE_ORE_KEY)
+                            .requiresCorrectToolForDrops()
+                            .strength(3.0F, 3.0F) // Hardness
+            )
+    );
+
+    // --- DEEPSLATE VESPERITE ORE ---
+    public static final ResourceKey<Block> DEEPSLATE_VESPERITE_ORE_KEY = ResourceKey.create(
+            BuiltInRegistries.BLOCK.key(),
+            Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "deepslate_vesperite_ore")
+    );
+    public static final Block DEEPSLATE_VESPERITE_ORE = registerBlock("deepslate_vesperite_ore",
+            new DropExperienceBlock(
+                    ConstantInt.of(2),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
+                            .setId(DEEPSLATE_VESPERITE_ORE_KEY)
+                            .requiresCorrectToolForDrops()
+                            .strength(4.5F, 3.0F) // Harder than stone ore
             )
     );
 

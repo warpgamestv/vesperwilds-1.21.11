@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "vesper_wilds:block/velvet_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "vesper_wilds:block/velvet_log"
+    },
+    "axis=z": {
+      "model": "vesper_wilds:block/velvet_log_horizontal",
+      "x": 90
+    }
+  }
+}
