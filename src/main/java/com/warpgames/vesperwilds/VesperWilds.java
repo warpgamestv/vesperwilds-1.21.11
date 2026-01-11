@@ -1,5 +1,7 @@
 package com.warpgames.vesperwilds;
 
+import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
+import com.warpgames.vesperwilds.worldgen.tree.ModTreeDecoratorTypes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
@@ -40,6 +42,9 @@ public class VesperWilds implements ModInitializer {
 						entries.accept(ModItems.VELVET_BUTTON_ITEM);
 						entries.accept(ModItems.VELVET_PRESSURE_PLATE_ITEM);
 						entries.accept(ModItems.VELVET_SLAB_ITEM);
+						entries.accept(ModItems.VELVET_FERN);
+						entries.accept(ModItems.VESPER_SPROUTS);
+						entries.accept(ModItems.EMBER_SHELF_FUNGUS);
 					})
 					.build()
 	);
@@ -50,6 +55,7 @@ public class VesperWilds implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBiomes.registerBiomes();
 		ModParticles.registerParticles();
+		ModTreeDecoratorTypes.register();
 
 		// Note: TerraBlender registration is now handled in VesperTerraBlender.java
 

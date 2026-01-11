@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "vesper_wilds:block/ember_shelf_fungus" },
+    "facing=south": { "model": "vesper_wilds:block/ember_shelf_fungus", "y": 180 },
+    "facing=west":  { "model": "vesper_wilds:block/ember_shelf_fungus", "y": 270 },
+    "facing=east":  { "model": "vesper_wilds:block/ember_shelf_fungus", "y": 90 }
+  }
+}

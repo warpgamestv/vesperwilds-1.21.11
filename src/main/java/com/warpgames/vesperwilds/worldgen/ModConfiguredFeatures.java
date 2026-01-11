@@ -6,12 +6,15 @@ import com.warpgames.vesperwilds.VesperWilds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
@@ -28,6 +31,9 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> VELVET_TREE_KEY = registerKey("velvet_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_VESPER_TREE_KEY = registerKey("mega_vesper_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GLINT_BERRY_PATCH_KEY = registerKey("glint_berry_patch");
+    // Register Keys
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VELVET_FERN_KEY = registerKey("velvet_fern");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VESPER_SPROUTS_KEY = registerKey("vesper_sprouts");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         // Defines the "Velvet Tree"
@@ -88,7 +94,26 @@ public class ModConfiguredFeatures {
                         )
                 )
         );
+// 1. Velvet Fern (Clump of 32 tries, spread out slightly)
+        // We use the same logic as PATCH_TAIGA_GRASS from your file
+        register(context, VELVET_FERN_KEY, Feature.RANDOM_PATCH,
+                grassPatch(BlockStateProvider.simple(ModBlocks.VELVET_FERN), 32));
 
+        // 2. Vesper Sprouts (Clump of 64 tries, dense carpet)
+        // We use logic similar to PATCH_GRASS
+        register(context, VESPER_SPROUTS_KEY, Feature.RANDOM_PATCH,
+                grassPatch(BlockStateProvider.simple(ModBlocks.VESPER_SPROUTS), 64));
+
+    }
+
+    // --- Helper Method from VegetationFeatures.java ---
+    // This defines "Pick a random spot, then try to place 'tries' amount of blocks around it"
+    private static RandomPatchConfiguration grassPatch(BlockStateProvider blockStateProvider, int tries) {
+        return new RandomPatchConfiguration(
+                tries,
+                7,
+                3,
+                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(blockStateProvider)));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

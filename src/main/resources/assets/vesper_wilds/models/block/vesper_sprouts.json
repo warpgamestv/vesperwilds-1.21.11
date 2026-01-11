@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "vesper_wilds:block/vesper_sprouts"
+  }
+}

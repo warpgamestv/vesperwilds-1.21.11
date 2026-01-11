@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "vesper_wilds:block/velvet_fern_bottom"
+    },
+    "half=upper": {
+      "model": "vesper_wilds:block/velvet_fern_top"
+    }
+  }
+}

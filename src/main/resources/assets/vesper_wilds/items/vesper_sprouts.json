@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:item",
+    "model": "vesper_wilds:item/vesper_sprouts"
+  }
+}

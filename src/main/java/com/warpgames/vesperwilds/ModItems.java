@@ -125,6 +125,32 @@ public class ModItems {
             new BlockItem(ModBlocks.DEEPSLATE_VESPERITE_ORE, new Item.Properties().setId(DEEPSLATE_VESPERITE_ORE_KEY))
     );
 
+// --- NEW PLANTS (The Crash was Here!) ---
+    // You must create keys for these too, just like the blocks.
+public static final ResourceKey<Item> VELVET_FERN_KEY = ResourceKey.create(
+        BuiltInRegistries.ITEM.key(),
+        Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_fern")
+);
+    public static final Item VELVET_FERN = registerItem("velvet_fern",
+            new BlockItem(ModBlocks.VELVET_FERN, new Item.Properties().setId(VELVET_FERN_KEY))
+    );
+
+    public static final ResourceKey<Item> VESPER_SPROUTS_KEY = ResourceKey.create(
+            BuiltInRegistries.ITEM.key(),
+            Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "vesper_sprouts")
+    );
+    public static final Item VESPER_SPROUTS = registerItem("vesper_sprouts",
+            new BlockItem(ModBlocks.VESPER_SPROUTS, new Item.Properties().setId(VESPER_SPROUTS_KEY))
+    );
+
+    public static final ResourceKey<Item> EMBER_SHELF_FUNGUS_KEY = ResourceKey.create(
+            BuiltInRegistries.ITEM.key(),
+            Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "ember_shelf_fungus")
+    );
+    public static final Item EMBER_SHELF_FUNGUS = registerItem("ember_shelf_fungus",
+            new BlockItem(ModBlocks.EMBER_SHELF_FUNGUS, new Item.Properties().setId(EMBER_SHELF_FUNGUS_KEY))
+    );
+
     // --- HELPER METHOD ---
     private static Item registerItem(String name, Item item) {
         return Registry.register(

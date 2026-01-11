@@ -107,7 +107,11 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
-      "vesper_wilds:vesperite_ore"]
+      "vesper_wilds:vesperite_ore"
+    ],
+    ["vesper_wilds:velvet_fern_placed",
+      "vesper_wilds:vesper_sprouts_placed"
+    ]
   ]
 
 }

@@ -1,7 +1,12 @@
 {
   "type": "minecraft:tree",
   "config": {
-    "decorators": [],
+    "decorators": [
+      {
+        "type": "vesper_wilds:ember_fungus",
+        "probability": 0.2
+      }
+    ],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
