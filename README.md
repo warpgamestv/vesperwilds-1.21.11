@@ -1,8 +1,10 @@
 # 🌑 Vesper Wilds
 
 ![Fabric](https://img.shields.io/badge/Loader-Fabric-beige?style=for-the-badge)
-![Minecraft](https://img.shields.io/badge/Minecraft-1.21-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Beta-purple?style=for-the-badge)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21-darkgreen?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-ALPHA-purple?style=for-the-badge)
+<a href="https://www.curseforge.com/minecraft/mc-mods/vesper-wilds"><img src="https://img.shields.io/badge/CurseForge-0.0.20-orange?style=for-the-badge" alt="CurseForge"/></a>
+<a href="https://modrinth.com/mod/vesper-wilds"><img src="https://img.shields.io/badge/Modrinth-0.0.20-green?style=for-the-badge" alt="Modrinth"/></a>
 
 **A Minecraft Fabric Mod adding a touch of eternal twilight to the Overworld.**
 
