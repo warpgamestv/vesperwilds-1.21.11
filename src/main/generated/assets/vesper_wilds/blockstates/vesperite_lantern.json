@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "vesper_wilds:block/vesperite_lantern"
+    },
+    "hanging=true": {
+      "model": "vesper_wilds:block/vesperite_lantern_hanging"
+    }
+  }
+}

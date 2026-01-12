@@ -15,10 +15,11 @@ public class VesperWildsDataGenerator implements DataGeneratorEntrypoint {
 
 		// ADD THIS LINE:
 		pack.addProvider(ModWorldGenerator::new);
-		pack.addProvider(VesperRecipeProvider::new);
-		pack.addProvider(VesperModelProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
+		pack.addProvider(ModLangProvider::new);
 	}
 
 	// ADD THIS METHOD:

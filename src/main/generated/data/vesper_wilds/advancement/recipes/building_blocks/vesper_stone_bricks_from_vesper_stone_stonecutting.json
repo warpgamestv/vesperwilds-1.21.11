@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vesper_wilds:vesper_stone_bricks_from_vesper_stone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vesper_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vesper_wilds:vesper_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_vesper_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vesper_wilds:vesper_stone_bricks_from_vesper_stone_stonecutting"
+    ]
+  }
+}

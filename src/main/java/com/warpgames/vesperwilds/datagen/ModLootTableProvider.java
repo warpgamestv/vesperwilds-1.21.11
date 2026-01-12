@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup; // standard for 1.21 MojMap
 import com.warpgames.vesperwilds.ModBlocks; // Ensure this points to your blocks
+import net.minecraft.world.level.block.Block;
+
 import java.util.concurrent.CompletableFuture;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
@@ -16,6 +18,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         // --- Basic Blocks (Drop Themselves) ---
+        dropSelf(ModBlocks.VESPERITE_LANTERN);
         dropSelf(ModBlocks.VELVET_LOG);
         //dropSelf(ModBlocks.VELVET_WOOD);
         //dropSelf(ModBlocks.STRIPPED_VELVET_LOG);
@@ -28,6 +31,16 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         dropSelf(ModBlocks.VELVET_BUTTON);
         dropSelf(ModBlocks.VELVET_PRESSURE_PLATE);
         dropSelf(ModBlocks.VELVET_SAPLING);
+        dropSelf(ModBlocks.EMBER_SHELF_FUNGUS);
+        dropSelf(ModBlocks.VESPER_SPROUTS);
+        dropSelf(ModBlocks.VESPER_STONE); // Or make it drop Cobble if you want!
+        dropSelf(ModBlocks.VESPER_STONE_BRICKS);
+        dropSelf(ModBlocks.VESPER_STONE_BRICK_STAIRS);
+        dropSelf(ModBlocks.VESPER_STONE_BRICK_WALL);
+        add(ModBlocks.VESPER_STONE_BRICK_SLAB, createSlabItemTable(ModBlocks.VESPER_STONE_BRICK_SLAB));
+
+        //Fern dropping. Making sure it only drops one fern and not two or none.
+        this.add(ModBlocks.VELVET_FERN, createDoublePlantWithSeedDrops(ModBlocks.VELVET_FERN, Block.byItem(ModItems.VELVET_FERN)));
 
         // Ores drop correctly
         add(ModBlocks.VESPERITE_ORE, createOreDrop(ModBlocks.VESPERITE_ORE, ModItems.RAW_VESPERITE));

@@ -76,6 +76,39 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VESPERITE_ORE)
                 .add(ModBlocks.DEEPSLATE_VESPERITE_ORE);
                 //.add(ModBlocks.RAW_VESPERITE_BLOCK);
+        // 1. Mineable with Pickaxe
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.VESPER_STONE)
+                .add(ModBlocks.VESPER_STONE_BRICKS)
+                .add(ModBlocks.VESPER_STONE_BRICK_STAIRS)
+                .add(ModBlocks.VESPER_STONE_BRICK_SLAB)
+                .add(ModBlocks.VESPER_STONE_BRICK_WALL)
+                .add(ModBlocks.VESPERITE_ORE)           // (Add these if you haven't already)
+                .add(ModBlocks.DEEPSLATE_VESPERITE_ORE);
+
+// 2. Tool Tier (Stone Tool or better mimics Deepslate)
+        valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.VESPER_STONE)
+                .add(ModBlocks.VESPER_STONE_BRICKS)
+                .add(ModBlocks.VESPER_STONE_BRICK_STAIRS)
+                .add(ModBlocks.VESPER_STONE_BRICK_SLAB)
+                .add(ModBlocks.VESPER_STONE_BRICK_WALL)
+                .add(ModBlocks.VESPERITE_ORE)
+                .add(ModBlocks.DEEPSLATE_VESPERITE_ORE);
+        // 3. Walls
+        valueLookupBuilder(BlockTags.WALLS)
+                .add(ModBlocks.VESPER_STONE_BRICK_WALL);
+
+// 4. Stairs
+        valueLookupBuilder(BlockTags.STAIRS)
+                .add(ModBlocks.VESPER_STONE_BRICK_STAIRS);
+
+// 5. Slabs
+        valueLookupBuilder(BlockTags.SLABS)
+                .add(ModBlocks.VESPER_STONE_BRICK_SLAB);
+
+        valueLookupBuilder(BlockTags.BASE_STONE_OVERWORLD)
+                .add(ModBlocks.VESPER_STONE);
 
     }
 }

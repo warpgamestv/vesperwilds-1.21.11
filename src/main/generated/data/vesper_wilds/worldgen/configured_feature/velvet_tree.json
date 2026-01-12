@@ -4,7 +4,7 @@
     "decorators": [
       {
         "type": "vesper_wilds:ember_fungus",
-        "probability": 0.2
+        "probability": 0.25
       }
     ],
     "dirt_provider": {

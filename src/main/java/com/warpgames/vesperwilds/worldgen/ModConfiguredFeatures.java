@@ -3,6 +3,9 @@ package com.warpgames.vesperwilds.worldgen;
 import com.warpgames.vesperwilds.GlintBerryBushBlock;
 import com.warpgames.vesperwilds.ModBlocks;
 import com.warpgames.vesperwilds.VesperWilds;
+import com.warpgames.vesperwilds.block.custom.EmberShelfFungusBlock;
+import com.warpgames.vesperwilds.worldgen.tree.EmberFungusTreeDecorator;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -12,19 +15,18 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
+
+import java.util.List;
 
 public class ModConfiguredFeatures {
     // This Key is what we will give to the Sapling later!
@@ -59,8 +61,11 @@ public class ModConfiguredFeatures {
                         ),
 
                         // 3. FEATURE SIZE: (Required for calculation)
-                        new TwoLayersFeatureSize(1, 0, 2)
-                ).build());
+                        new TwoLayersFeatureSize(1, 0, 2))
+                        .decorators(List.of(
+                                new EmberFungusTreeDecorator(0.25f)
+                        ))
+                        .build());
 
         // 2. REGISTER THE NEW "MEGA" TREE
         register(context, MEGA_VESPER_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -80,8 +85,11 @@ public class ModConfiguredFeatures {
                 ),
 
                 // FEATURE SIZE: (Required for 2x2 trees)
-                new TwoLayersFeatureSize(1, 1, 2)
-        ).build());
+                new TwoLayersFeatureSize(1, 1, 2))
+                .decorators(List.of(
+                        new EmberFungusTreeDecorator(0.25f)
+                ))
+                .build());
 
         // Register the Patch
         register(context, GLINT_BERRY_PATCH_KEY, Feature.RANDOM_PATCH,
@@ -114,6 +122,18 @@ public class ModConfiguredFeatures {
                 7,
                 3,
                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(blockStateProvider)));
+    }
+
+    // Helper method to create a fungus decorator for a specific direction
+    private static AttachedToLeavesDecorator shelfFungus(Direction dir) {
+        return new AttachedToLeavesDecorator(
+                0.25f, // Chance (25% per direction = very lush trees)
+                1,     // x-offset
+                0,     // y-offset
+                BlockStateProvider.simple(ModBlocks.EMBER_SHELF_FUNGUS.defaultBlockState().setValue(EmberShelfFungusBlock.FACING, dir)),
+                1,     // Required empty blocks
+                List.of(dir) // Look for leaves in this direction
+        );
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "vesper_wilds:block/vesper_stone_bricks"
+  }
+}

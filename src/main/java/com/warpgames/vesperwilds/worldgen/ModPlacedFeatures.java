@@ -2,6 +2,8 @@ package com.warpgames.vesperwilds.worldgen;
 
 import com.warpgames.vesperwilds.ModBlocks;
 import com.warpgames.vesperwilds.VesperWilds;
+import com.warpgames.vesperwilds.worldgen.tree.EmberFungusTreeDecorator;
+import com.warpgames.vesperwilds.worldgen.tree.ModTreeDecoratorTypes;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -23,6 +25,7 @@ public class ModPlacedFeatures {
     // Register Keys
     public static final ResourceKey<PlacedFeature> VELVET_FERN_PLACED_KEY = registerKey("velvet_fern_placed");
     public static final ResourceKey<PlacedFeature> VESPER_SPROUTS_PLACED_KEY = registerKey("vesper_sprouts_placed");
+    public static final ResourceKey<PlacedFeature> EMBER_SHELF_FUNGUS_PLACED_KEY = registerKey("placed_ember_shelf_fungus");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         // 1. Get the Configured Feature (The Shape) we made earlier

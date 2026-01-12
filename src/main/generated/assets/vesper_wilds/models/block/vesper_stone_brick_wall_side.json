@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "vesper_wilds:block/vesper_stone_bricks"
+  }
+}

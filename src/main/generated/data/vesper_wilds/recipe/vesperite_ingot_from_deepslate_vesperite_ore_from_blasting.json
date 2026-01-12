@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "vesperite",
+  "ingredient": "vesper_wilds:deepslate_vesperite_ore",
+  "result": {
+    "id": "vesper_wilds:vesperite_ingot"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "vesper_wilds:block/vesper_stone_bricks",
+    "side": "vesper_wilds:block/vesper_stone_bricks",
+    "top": "vesper_wilds:block/vesper_stone_bricks"
+  }
+}

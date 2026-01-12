@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "vesper_wilds:block/vesperite_lantern"
+  }
+}

@@ -1,6 +1,7 @@
 package com.warpgames.vesperwilds;
 
 import com.warpgames.vesperwilds.block.custom.EmberShelfFungusBlock;
+import com.warpgames.vesperwilds.block.custom.VesperiteLanternBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
@@ -38,6 +39,12 @@ public class ModBlocks {
     public static final ResourceKey<Block> GLINT_BERRY_BUSH_KEY = key("glint_berry_bush");
     public static final ResourceKey<Block> VESPERITE_ORE_KEY = key("vesperite_ore");
     public static final ResourceKey<Block> DEEPSLATE_VESPERITE_ORE_KEY = key("deepslate_vesperite_ore");
+    public static final ResourceKey<Block> VESPER_STONE_KEY = key("vesper_stone");
+    public static final ResourceKey<Block> VESPER_STONE_BRICKS_KEY = key("vesper_stone_bricks");
+    public static final ResourceKey<Block> VESPER_STONE_BRICK_STAIRS_KEY = key("vesper_stone_brick_stairs");
+    public static final ResourceKey<Block> VESPER_STONE_BRICK_SLAB_KEY = key("vesper_stone_brick_slab");
+    public static final ResourceKey<Block> VESPER_STONE_BRICK_WALL_KEY = key("vesper_stone_brick_wall");
+    public static final ResourceKey<Block> VESPERITE_LANTERN_KEY = key("vesperite_lantern");
 
     // The New Plants (These were missing before!)
     public static final ResourceKey<Block> VELVET_FERN_KEY = key("velvet_fern");
@@ -148,12 +155,69 @@ public class ModBlocks {
     public static final Block EMBER_SHELF_FUNGUS = registerBlock("ember_shelf_fungus",
             new EmberShelfFungusBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
-                    .lightLevel((state) -> 10)
+                    .lightLevel((state) -> 5)
                     .noCollision()
                     .instabreak()
                     .sound(SoundType.WOOD)
                     .pushReaction(PushReaction.DESTROY)
                     .setId(EMBER_SHELF_FUNGUS_KEY)));
+
+    // 1. Vesper Stone
+    public static final Block VESPER_STONE = registerBlock("vesper_stone",
+            new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0f, 6.0f)
+                    .sound(SoundType.DEEPSLATE)
+                    .setId(VESPER_STONE_KEY))); // <-- Added this
+
+    // 2. Vesper Stone Bricks
+    public static final Block VESPER_STONE_BRICKS = registerBlock("vesper_stone_bricks",
+            new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0f, 6.0f)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .setId(VESPER_STONE_BRICKS_KEY))); // <-- Added this
+
+    // 3. Stairs
+    public static final Block VESPER_STONE_BRICK_STAIRS = registerBlock("vesper_stone_brick_stairs",
+            new StairBlock(Blocks.DEEPSLATE_BRICKS.defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.DEEPSLATE)
+                            .requiresCorrectToolForDrops()
+                            .strength(3.0f, 6.0f)
+                            .sound(SoundType.DEEPSLATE_BRICKS)
+                            .setId(VESPER_STONE_BRICK_STAIRS_KEY))); // <-- Added this
+
+    // 4. Slabs
+    public static final Block VESPER_STONE_BRICK_SLAB = registerBlock("vesper_stone_brick_slab",
+            new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0f, 6.0f)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .setId(VESPER_STONE_BRICK_SLAB_KEY))); // <-- Added this
+
+    // 5. Walls
+    public static final Block VESPER_STONE_BRICK_WALL = registerBlock("vesper_stone_brick_wall",
+            new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0f, 6.0f)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .setId(VESPER_STONE_BRICK_WALL_KEY))); // <-- Added this
+
+    public static final Block VESPERITE_LANTERN = registerBlock("vesperite_lantern",
+            new VesperiteLanternBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .forceSolidOn()
+                    .requiresCorrectToolForDrops()
+                    .strength(3.5F)
+                    .sound(SoundType.LANTERN)
+                    .lightLevel((state) -> 15) // Maximum Light
+                    .noOcclusion()
+                    .setId(VESPERITE_LANTERN_KEY)));
 
 
     // =================================================================

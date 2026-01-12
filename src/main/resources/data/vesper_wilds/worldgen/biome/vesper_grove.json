@@ -10,7 +10,7 @@
   "temperature_modifier": "none",
   "effects": {
     "water_color": 6248832,
-    "grass_color": 8364923
+    "grass_color": 5720181
   },
   "spawners": {
     "ambient": [
@@ -53,14 +53,6 @@
         "minCount": 4,
         "weight": 5
       }
-    ],
-    "water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 2
-      }
     ]
   },
   "spawn_costs": {},
@@ -78,15 +70,9 @@
     [
       "minecraft:spring_water"
     ],
-    ["minecraft:ore_dirt",
+    ["vesper_wilds:ore_vesper_stone_placed",
+      "minecraft:ore_dirt",
       "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",

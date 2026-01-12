@@ -3,7 +3,8 @@
 	"package": "com.warpgames.vesperwilds.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"NaturalSpawnerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

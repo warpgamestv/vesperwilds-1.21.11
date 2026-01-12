@@ -9,7 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://warpgamestv.com",
-		"sources": "https://github.com/warpgamestv/vesperwilds-1.21.11"
+		"sources": "https://github.com/warpgamestv/vesperwilds-1.21.11",
+		"wiki": "https://github.com/warpgamestv/vesperwilds-1.21.11/wiki"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/vesper_wilds/icon.png",

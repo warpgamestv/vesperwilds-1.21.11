@@ -1,6 +1,7 @@
 package com.warpgames.vesperwilds;
 
 import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
+import com.warpgames.vesperwilds.worldgen.ModSurfaceRuleData;
 import com.warpgames.vesperwilds.worldgen.tree.ModTreeDecoratorTypes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import terrablender.api.SurfaceRuleManager;
 
 public class VesperWilds implements ModInitializer {
 	public static final String MOD_ID = "vesper_wilds";
@@ -45,6 +47,12 @@ public class VesperWilds implements ModInitializer {
 						entries.accept(ModItems.VELVET_FERN);
 						entries.accept(ModItems.VESPER_SPROUTS);
 						entries.accept(ModItems.EMBER_SHELF_FUNGUS);
+						entries.accept(ModBlocks.VESPER_STONE);
+						entries.accept(ModBlocks.VESPER_STONE_BRICKS);
+						entries.accept(ModBlocks.VESPER_STONE_BRICK_STAIRS);
+						entries.accept(ModBlocks.VESPER_STONE_BRICK_SLAB);
+						entries.accept(ModBlocks.VESPER_STONE_BRICK_WALL);
+						entries.accept(ModItems.VESPERITE_INGOT);
 					})
 					.build()
 	);
@@ -56,6 +64,7 @@ public class VesperWilds implements ModInitializer {
 		ModBiomes.registerBiomes();
 		ModParticles.registerParticles();
 		ModTreeDecoratorTypes.register();
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRuleData.makeRules());
 
 		// Note: TerraBlender registration is now handled in VesperTerraBlender.java
 

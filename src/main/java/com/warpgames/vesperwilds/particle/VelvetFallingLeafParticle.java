@@ -16,16 +16,18 @@ public class VelvetFallingLeafParticle extends FallingLeavesParticle {
     private final float spinAcceleration;
 
     protected VelvetFallingLeafParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
-        // Pass standard values to super, but we will override the behavior in tick() anyway
+        // Pass standard values to super
         super(level, x, y, z, spriteSet.get(level.random), 0.12F, 2.0F, false, true, 1.0F, 0.0F);
 
         this.lifetime = 600; // 30 Seconds max life
-        this.gravity = 0.04F; // Low gravity for floaty effect
-        this.friction = 0.98F; // Slight air resistance
+
+        // --- KEY CHANGES FOR FLOATY PHYSICS ---
+        this.gravity = 0.0025F; // WAS 0.04F. Lower = Floatiest.
+        this.friction = 0.96F;  // WAS 0.98F. Lower = More air resistance (slows down faster).
 
         // Initialize custom spin
-        this.rotationSpeed = (float)Math.toRadians(this.random.nextBoolean() ? -3.0 : 3.0);
-        this.spinAcceleration = (float)Math.toRadians(this.random.nextBoolean() ? -0.2 : 0.2);
+        this.rotationSpeed = (float)Math.toRadians(this.random.nextBoolean() ? -2.0 : 2.0); // Slower spin start
+        this.spinAcceleration = (float)Math.toRadians(this.random.nextBoolean() ? -0.1 : 0.1);
     }
 
     @Override
@@ -45,21 +47,21 @@ public class VelvetFallingLeafParticle extends FallingLeavesParticle {
         this.yd -= this.gravity;
 
         // 3. Add Wind / Drift (Simulated)
-        // This adds a gentle random push every tick so it never stops moving
-        this.xd += (this.random.nextFloat() - 0.5F) * 0.01F;
-        this.zd += (this.random.nextFloat() - 0.5F) * 0.01F;
+        // Reduced the drift force slightly so they don't jitter when moving slow
+        this.xd += (this.random.nextFloat() - 0.5F) * 0.005F;
+        this.zd += (this.random.nextFloat() - 0.5F) * 0.005F;
 
         // 4. Handle Spinning
         this.oRoll = this.roll;
         this.roll += this.rotationSpeed;
         this.rotationSpeed += this.spinAcceleration;
         // Dampen the spin so it doesn't get crazy fast
-        this.rotationSpeed *= 0.98F;
+        this.rotationSpeed *= 0.95F; // Increased spin dampening
 
         // 5. Move!
         this.move(this.xd, this.yd, this.zd);
 
-        // 6. Kill ONLY if on the ground
+        // 6. Kill ONLY if on the ground or in water (optional)
         if (this.onGround) {
             this.remove();
         }
