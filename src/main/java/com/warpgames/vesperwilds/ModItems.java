@@ -20,6 +20,15 @@ public class ModItems {
             new Item(new Item.Properties().setId(RAW_VESPERITE_KEY))
     );
 
+    public static final ResourceKey<Item> BOTTLED_MOTH_KEY = ResourceKey.create(
+            BuiltInRegistries.ITEM.key(),
+            Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "bottled_moth")
+    );
+
+    public static final Item BOTTLED_MOTH = registerItem("bottled_moth",
+            new Item(new Item.Properties().stacksTo(16).setId(BOTTLED_MOTH_KEY))
+    );
+
     // --- BLOCK ITEMS ---
     public static final ResourceKey<Item> VELVET_LOG_KEY = ResourceKey.create(
             BuiltInRegistries.ITEM.key(),
@@ -153,6 +162,14 @@ public class ModItems {
     );
     public static final Item VESPERITE_INGOT = registerItem("vesperite_ingot",
             new Item(new Item.Properties().setId(VESPERITE_INGOT_KEY))
+    );
+
+    public static final ResourceKey<Item> VESPERITE_NUGGET_KEY = ResourceKey.create(
+            BuiltInRegistries.ITEM.key(),
+            Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "vesperite_nugget")
+    );
+    public static final Item VESPERITE_NUGGET = registerItem("vesperite_nugget",
+            new Item(new Item.Properties().setId(VESPERITE_NUGGET_KEY))
     );
 
 public static final ResourceKey<Item> VELVET_FERN_KEY = ResourceKey.create(

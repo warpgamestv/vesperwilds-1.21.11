@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "vesper_wilds:bottled_moth",
+    "X": "vesper_wilds:vesperite_nugget"
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "vesper_wilds:vesperite_lantern"
+  }
+}

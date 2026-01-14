@@ -19,6 +19,17 @@ repositories {
 		name = "TerraBlender"
 		url = "https://maven.minecraftforge.net/"
 	}
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = 'GeckoLib'
+				url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+			}
+		}
+		filter {
+			includeGroup('software.bernie.geckolib')
+		}
+	}
 }
 
 fabricApi {
@@ -35,6 +46,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	// TerraBlender Dependency
 	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
+	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
 }
 
 processResources {

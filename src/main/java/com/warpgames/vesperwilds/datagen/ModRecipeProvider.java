@@ -141,6 +141,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.VESPERITE_INGOT), has(ModItems.VESPERITE_INGOT))
                         .save(exporter);
 
+                nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.VESPERITE_INGOT, RecipeCategory.MISC, ModItems.VESPERITE_NUGGET);
+
                 //furnace, blast furnace, and smoker recipes
                 List<ItemLike> VESPERITE_SMELTABLES = List.of(ModItems.RAW_VESPERITE, ModBlocks.VESPERITE_ORE, ModBlocks.DEEPSLATE_VESPERITE_ORE);
 

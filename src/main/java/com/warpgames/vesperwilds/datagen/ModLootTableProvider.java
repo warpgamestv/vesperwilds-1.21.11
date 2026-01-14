@@ -1,5 +1,6 @@
 package com.warpgames.vesperwilds.datagen;
 
+import com.warpgames.vesperwilds.ModEntities;
 import com.warpgames.vesperwilds.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
