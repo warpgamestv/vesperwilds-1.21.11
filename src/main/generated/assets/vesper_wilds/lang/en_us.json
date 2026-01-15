@@ -1,5 +1,6 @@
 {
   "biome.vesper_wilds.vesper_grove": "Vesper Grove",
+  "item.vesper_wilds.bottled_moth": "Bottled Moth",
   "item.vesper_wilds.deepslate_vesperite_ore": "Deepslate Vesperite Ore",
   "item.vesper_wilds.ember_shelf_fungus": "Ember Shelf Fungus",
   "item.vesper_wilds.glint_berries": "Glint Berries",
@@ -27,6 +28,7 @@
   "item.vesper_wilds.vesperite_hoe": "Vesperite Hoe",
   "item.vesper_wilds.vesperite_ingot": "Vesperite Ingot",
   "item.vesper_wilds.vesperite_lantern": "Vesperite Lantern",
+  "item.vesper_wilds.vesperite_nugget": "Vesperite Nugget",
   "item.vesper_wilds.vesperite_ore": "Vesperite Ore",
   "item.vesper_wilds.vesperite_pickaxe": "Vesperite Pickaxe",
   "item.vesper_wilds.vesperite_shovel": "Vesperite Shovel",

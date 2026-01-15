@@ -54,10 +54,31 @@ public class VelvetMothEntity extends PathfinderMob implements GeoEntity, Flying
     // --- 1. ATTRIBUTES (Health, Speed, Flying) ---
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 10.0D)       // 5 Hearts
+                .add(Attributes.MAX_HEALTH, 5.0D)       // 5 Hearts
                 .add(Attributes.FLYING_SPEED, 0.6f)      // Fast flyer
                 .add(Attributes.MOVEMENT_SPEED, 0.25D)    // Ground speed
                 .add(Attributes.FOLLOW_RANGE, 32.0D);// Detection range
+    }
+
+    private static final int SHED_TIME = 6000;
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+
+        // Server-side only check
+        if (this.level() instanceof ServerLevel serverLevel) {
+
+            // 1 in 6000 chance
+            if (this.random.nextInt(SHED_TIME) == 0) {
+
+                // CORRECT FORMAT: spawnAtLocation(ServerLevel, ItemStack)
+                this.spawnAtLocation(serverLevel, new ItemStack(Items.STRING));
+
+                // Optional Sound
+                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            }
+        }
     }
 
     // 4. Override Navigation to handle 3D paths

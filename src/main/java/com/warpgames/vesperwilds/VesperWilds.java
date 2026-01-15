@@ -66,6 +66,7 @@ public class VesperWilds implements ModInitializer {
 						entries.accept(ModItems.VESPERITE_SWORD);
 						entries.accept(ModItems.VESPERITE_HOE);
 						entries.accept(ModItems.BOTTLED_MOTH);
+						entries.accept(ModItems.VESPERITE_LANTERN);
 
 					})
 					.build()

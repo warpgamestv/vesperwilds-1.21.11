@@ -56,8 +56,9 @@ public class ModLangProvider extends FabricLanguageProvider {
         builder.add(ModItems.VESPERITE_AXE, "Vesperite Axe");
         builder.add(ModItems.VESPERITE_SHOVEL, "Vesperite Shovel");
         builder.add(ModItems.VESPERITE_HOE, "Vesperite Hoe");
-        //builder.add(ModItems.VESPERITE_NUGGET, "Vesperite Nugget");
+        builder.add(ModItems.VESPERITE_NUGGET, "Vesperite Nugget");
         builder.add(ModItems.VESPERITE_LANTERN, "Vesperite Lantern");
+        builder.add(ModItems.BOTTLED_MOTH, "Bottled Moth");
 
 
         // --- Biomes ---
