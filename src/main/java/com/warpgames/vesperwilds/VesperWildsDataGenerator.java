@@ -20,6 +20,7 @@ public class VesperWildsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModLangProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
 	}
 
 	// ADD THIS METHOD:
