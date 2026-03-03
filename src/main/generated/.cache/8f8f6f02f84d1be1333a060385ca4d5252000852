@@ -3,6 +3,8 @@
 770c006d2c58072823de760a062a0a25ea9d97ab data/minecraft/tags/block/doors.json
 de1d9dd18addddcdff4319f75f28eead1e7dbd5f data/minecraft/tags/block/fence_gates.json
 109bdb08a55e39622471c8936f5109bb06f634ef data/minecraft/tags/block/fences.json
+f144f503f414d957f78dbbe835233bc0d721a67a data/minecraft/tags/block/logs.json
+f144f503f414d957f78dbbe835233bc0d721a67a data/minecraft/tags/block/logs_that_burn.json
 f5a4bd850f10ffbfc521a515be851954e1b6f5f4 data/minecraft/tags/block/mineable/pickaxe.json
 4829bb9785b0453cc741138f26cea33850bb18e4 data/minecraft/tags/block/needs_iron_tool.json
 96e01d4878f63b40b929b30e016e9912d01fa558 data/minecraft/tags/block/needs_stone_tool.json

@@ -7,6 +7,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup; // standard for 1.21 MojMap
 import com.warpgames.vesperwilds.ModBlocks; // Ensure this points to your blocks
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -21,9 +23,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         // --- Basic Blocks (Drop Themselves) ---
         dropSelf(ModBlocks.VESPERITE_LANTERN);
         dropSelf(ModBlocks.VELVET_LOG);
-        //dropSelf(ModBlocks.VELVET_WOOD);
-        //dropSelf(ModBlocks.STRIPPED_VELVET_LOG);
-        //dropSelf(ModBlocks.STRIPPED_VELVET_WOOD);
+        // dropSelf(ModBlocks.VELVET_WOOD);
+        // dropSelf(ModBlocks.STRIPPED_VELVET_LOG);
+        // dropSelf(ModBlocks.STRIPPED_VELVET_WOOD);
         dropSelf(ModBlocks.VELVET_PLANKS);
         dropSelf(ModBlocks.VELVET_STAIRS);
         dropSelf(ModBlocks.VELVET_FENCE);
@@ -40,12 +42,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         dropSelf(ModBlocks.VESPER_STONE_BRICK_WALL);
         add(ModBlocks.VESPER_STONE_BRICK_SLAB, createSlabItemTable(ModBlocks.VESPER_STONE_BRICK_SLAB));
 
-        //Fern dropping. Making sure it only drops one fern and not two or none.
-        this.add(ModBlocks.VELVET_FERN, createDoublePlantWithSeedDrops(ModBlocks.VELVET_FERN, Block.byItem(ModItems.VELVET_FERN)));
+        // Fern dropping. Making sure it only drops one fern and not two or none.
+        this.add(ModBlocks.VELVET_FERN,
+                createSinglePropConditionTable(ModBlocks.VELVET_FERN, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
 
         // Ores drop correctly
         add(ModBlocks.VESPERITE_ORE, createOreDrop(ModBlocks.VESPERITE_ORE, ModItems.RAW_VESPERITE));
-        add(ModBlocks.DEEPSLATE_VESPERITE_ORE, createOreDrop(ModBlocks.DEEPSLATE_VESPERITE_ORE, ModItems.RAW_VESPERITE));
+        add(ModBlocks.DEEPSLATE_VESPERITE_ORE,
+                createOreDrop(ModBlocks.DEEPSLATE_VESPERITE_ORE, ModItems.RAW_VESPERITE));
 
         // --- Special Blocks (Use 'add' + helper methods) ---
 
@@ -57,8 +61,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         // Leaves: Use 'createLeavesDrops'
         // Arguments: (LeavesBlock, SaplingBlock, ChanceArray...)
-        // Note: You might need to check the exact arguments for 'createLeavesDrops' in your version,
+        // Note: You might need to check the exact arguments for 'createLeavesDrops' in
+        // your version,
         // typically it's just (block, sapling, chances).
-        add(ModBlocks.VELVET_LEAVES, createLeavesDrops(ModBlocks.VELVET_LEAVES, ModBlocks.VELVET_SAPLING, 0.05f, 0.0625f, 0.083333336f, 0.1f));
+        add(ModBlocks.VELVET_LEAVES, createLeavesDrops(ModBlocks.VELVET_LEAVES, ModBlocks.VELVET_SAPLING, 0.05f,
+                0.0625f, 0.083333336f, 0.1f));
     }
 }

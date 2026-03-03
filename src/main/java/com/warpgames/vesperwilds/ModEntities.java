@@ -1,5 +1,6 @@
 package com.warpgames.vesperwilds;
 
+import com.warpgames.vesperwilds.entity.custom.GloomStalkerEntity;
 import com.warpgames.vesperwilds.entity.custom.VelvetMothEntity;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,8 +19,14 @@ public class ModEntities {
                     .sized(0.5f, 0.5f) // Uses '.sized' (Mojang) instead of '.dimensions'
     );
 
+    public static final EntityType<GloomStalkerEntity> GLOOM_STALKER = register(
+            "gloom_stalker",
+            EntityType.Builder.of(GloomStalkerEntity::new, MobCategory.MONSTER)
+                    .sized(0.8f, 1.2f));
+
     // Helper method to handle the ResourceKey creation automatically
-    private static <T extends net.minecraft.world.entity.Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
+    private static <T extends net.minecraft.world.entity.Entity> EntityType<T> register(String name,
+            EntityType.Builder<T> builder) {
         // 1. Create the Identifier
         Identifier id = Identifier.fromNamespaceAndPath("vesper_wilds", name);
 

@@ -1,9 +1,11 @@
 {
   "biome.vesper_wilds.vesper_grove": "Vesper Grove",
+  "entity.vesper_wilds.gloom_stalker": "Gloom Stalker",
   "item.vesper_wilds.bottled_moth": "Bottled Moth",
   "item.vesper_wilds.deepslate_vesperite_ore": "Deepslate Vesperite Ore",
   "item.vesper_wilds.ember_shelf_fungus": "Ember Shelf Fungus",
   "item.vesper_wilds.glint_berries": "Glint Berries",
+  "item.vesper_wilds.gloom_stalker_spawn_egg": "Gloom Stalker Spawn Egg",
   "item.vesper_wilds.raw_vesperite": "Raw Vesperite",
   "item.vesper_wilds.velvet_button": "Velvet Button",
   "item.vesper_wilds.velvet_door": "Velvet Door",
@@ -12,6 +14,7 @@
   "item.vesper_wilds.velvet_fern": "Velvet Fern",
   "item.vesper_wilds.velvet_leaves": "Velvet Leaves",
   "item.vesper_wilds.velvet_log": "Velvet Log",
+  "item.vesper_wilds.velvet_moth_spawn_egg": "Velvet Moth Spawn Egg",
   "item.vesper_wilds.velvet_planks": "Velvet Planks",
   "item.vesper_wilds.velvet_pressure_plate": "Velvet Pressure Plate",
   "item.vesper_wilds.velvet_sapling": "Velvet Sapling",
@@ -33,5 +36,11 @@
   "item.vesper_wilds.vesperite_pickaxe": "Vesperite Pickaxe",
   "item.vesper_wilds.vesperite_shovel": "Vesperite Shovel",
   "item.vesper_wilds.vesperite_sword": "Vesperite Sword",
+  "item.vesperwilds.vesperite_axe.tooltip_combat": "Twilight Resonance: +2 Damage in low light",
+  "item.vesperwilds.vesperite_axe.tooltip_mining": "Twilight Resonance: +20% Mining Speed in low light",
+  "item.vesperwilds.vesperite_hoe.tooltip": "Twilight Resonance: +20% Mining Speed in low light",
+  "item.vesperwilds.vesperite_pickaxe.tooltip": "Twilight Resonance: +20% Mining Speed in low light",
+  "item.vesperwilds.vesperite_shovel.tooltip": "Twilight Resonance: +20% Mining Speed in low light",
+  "item.vesperwilds.vesperite_sword.tooltip": "Twilight Resonance: +2 Damage in low light",
   "itemgroup.vesper_wilds": "Vesper Wilds"
 }

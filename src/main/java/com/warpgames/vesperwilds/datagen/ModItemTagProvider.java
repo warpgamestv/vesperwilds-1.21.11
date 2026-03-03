@@ -18,7 +18,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        valueLookupBuilder(TagKey.create(Registries.ITEM, Identifier.parse("c:raw_materials")))
+        valueLookupBuilder(TagKey.create(Registries.ITEM, Identifier.parse("c:raw_materials/vesperite")))
                 .add(ModItems.RAW_VESPERITE);
     }
 }

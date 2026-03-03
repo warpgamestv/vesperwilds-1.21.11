@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin",
-		"NaturalSpawnerMixin"
+		"NaturalSpawnerMixin",
+		"PlayerTwilightResonanceMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

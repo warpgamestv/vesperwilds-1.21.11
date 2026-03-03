@@ -37,14 +37,15 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createDoor(ModBlocks.VELVET_DOOR);
         blockStateModelGenerator.createTrapdoor(ModBlocks.VELVET_TRAPDOOR);
 
-        //Cross Blocks, such as saplings, sprouts, other plants...
+        // Cross Blocks, such as saplings, sprouts, other plants...
 
-        //stone and stone variants
+        // stone and stone variants
         // 1. Simple Cube for the base stone
         blockStateModelGenerator.createTrivialCube(ModBlocks.VESPER_STONE);
 
         // 2. Texture Pool for the Bricks (Auto-generates stairs/slabs/walls!)
-        BlockModelGenerators.BlockFamilyProvider brickFamily = blockStateModelGenerator.family(ModBlocks.VESPER_STONE_BRICKS);
+        BlockModelGenerators.BlockFamilyProvider brickFamily = blockStateModelGenerator
+                .family(ModBlocks.VESPER_STONE_BRICKS);
         brickFamily.stairs(ModBlocks.VESPER_STONE_BRICK_STAIRS);
         brickFamily.slab(ModBlocks.VESPER_STONE_BRICK_SLAB);
         brickFamily.wall(ModBlocks.VESPER_STONE_BRICK_WALL);
@@ -63,5 +64,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.VESPERITE_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.VESPERITE_NUGGET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BOTTLED_MOTH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.GLOOM_STALKER_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.VELVET_MOTH_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
     }
 }

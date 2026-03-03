@@ -1,6 +1,8 @@
 package com.warpgames.vesperwilds;
 
+import com.warpgames.vesperwilds.entity.client.GloomStalkerRenderer;
 import com.warpgames.vesperwilds.entity.client.VelvetMothRenderer;
+import com.warpgames.vesperwilds.entity.custom.GloomStalkerEntity;
 import com.warpgames.vesperwilds.entity.custom.VelvetMothEntity;
 import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
 import com.warpgames.vesperwilds.worldgen.ModEntitySpawns;
@@ -26,67 +28,93 @@ public class VesperWilds implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	// --- CREATIVE TAB REGISTRATION ---
-	public static final CreativeModeTab VESPER_TAB = Registry.register(
+	public static final CreativeModeTab VESPER_BLOCKS_TAB = Registry.register(
 			BuiltInRegistries.CREATIVE_MODE_TAB,
-			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_tab"),
+			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_blocks_tab"),
 			FabricItemGroup.builder()
-					.icon(() -> new ItemStack(ModItems.VESPERITE_ORE_ITEM)) // Icon for the tab
-					.title(Component.literal("Vesper Wilds")) // Title of the tab
+					.icon(() -> new ItemStack(ModItems.VELVET_LOG)) // Icon for the tab
+					.title(Component.literal("Vesper Wilds: Blocks")) // Title of the tab
 					.displayItems((context, entries) -> {
-						// Add all your items here!
-						entries.accept(ModItems.RAW_VESPERITE);
 						entries.accept(ModItems.VESPERITE_ORE_ITEM);
 						entries.accept(ModItems.DEEPSLATE_VESPERITE_ORE_ITEM);
-						entries.accept(ModItems.GLINT_BERRIES);
-						entries.accept(ModItems.VELVET_LOG);
-						entries.accept(ModItems.VELVET_PLANKS);
-						entries.accept(ModItems.VELVET_LEAVES);
-						entries.accept(ModItems.VELVET_SAPLING);
-						entries.accept(ModItems.VELVET_STAIRS_ITEM);
-						entries.accept(ModItems.VELVET_DOOR_ITEM);
-						entries.accept(ModItems.VELVET_FENCE_GATE_ITEM);
-						entries.accept(ModItems.VELVET_FENCE_ITEM);
-						entries.accept(ModItems.VELVET_TRAPDOOR_ITEM);
-						entries.accept(ModItems.VELVET_BUTTON_ITEM);
-						entries.accept(ModItems.VELVET_PRESSURE_PLATE_ITEM);
-						entries.accept(ModItems.VELVET_SLAB_ITEM);
-						entries.accept(ModItems.VELVET_FERN);
-						entries.accept(ModItems.VESPER_SPROUTS);
-						entries.accept(ModItems.EMBER_SHELF_FUNGUS);
 						entries.accept(ModBlocks.VESPER_STONE);
 						entries.accept(ModBlocks.VESPER_STONE_BRICKS);
 						entries.accept(ModBlocks.VESPER_STONE_BRICK_STAIRS);
 						entries.accept(ModBlocks.VESPER_STONE_BRICK_SLAB);
 						entries.accept(ModBlocks.VESPER_STONE_BRICK_WALL);
+						entries.accept(ModItems.VELVET_LOG);
+						entries.accept(ModItems.VELVET_PLANKS);
+						entries.accept(ModItems.VELVET_STAIRS_ITEM);
+						entries.accept(ModItems.VELVET_SLAB_ITEM);
+						entries.accept(ModItems.VELVET_FENCE_ITEM);
+						entries.accept(ModItems.VELVET_FENCE_GATE_ITEM);
+						entries.accept(ModItems.VELVET_DOOR_ITEM);
+						entries.accept(ModItems.VELVET_TRAPDOOR_ITEM);
+						entries.accept(ModItems.VELVET_BUTTON_ITEM);
+						entries.accept(ModItems.VELVET_PRESSURE_PLATE_ITEM);
+						entries.accept(ModItems.VELVET_SAPLING);
+						entries.accept(ModItems.VELVET_LEAVES);
+						entries.accept(ModItems.VELVET_FERN);
+						entries.accept(ModItems.VESPER_SPROUTS);
+						entries.accept(ModItems.EMBER_SHELF_FUNGUS);
+						entries.accept(ModItems.GLINT_BERRIES);
+						entries.accept(ModItems.VESPERITE_LANTERN);
+					})
+					.build());
+
+	public static final CreativeModeTab VESPER_ITEMS_TAB = Registry.register(
+			BuiltInRegistries.CREATIVE_MODE_TAB,
+			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_items_tab"),
+			FabricItemGroup.builder()
+					.icon(() -> new ItemStack(ModItems.RAW_VESPERITE))
+					.title(Component.literal("Vesper Wilds: Items"))
+					.displayItems((context, entries) -> {
+						entries.accept(ModItems.RAW_VESPERITE);
 						entries.accept(ModItems.VESPERITE_INGOT);
 						entries.accept(ModItems.VESPERITE_NUGGET);
+						entries.accept(ModItems.BOTTLED_MOTH);
+						entries.accept(ModItems.GLOOM_STALKER_SPAWN_EGG);
+						entries.accept(ModItems.VELVET_MOTH_SPAWN_EGG);
+					})
+					.build());
+
+	public static final CreativeModeTab VESPER_TOOLS_TAB = Registry.register(
+			BuiltInRegistries.CREATIVE_MODE_TAB,
+			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_tools_tab"),
+			FabricItemGroup.builder()
+					.icon(() -> new ItemStack(ModItems.VESPERITE_PICKAXE))
+					.title(Component.literal("Vesper Wilds: Tools & Combat"))
+					.displayItems((context, entries) -> {
+						entries.accept(ModItems.VESPERITE_SWORD);
 						entries.accept(ModItems.VESPERITE_PICKAXE);
 						entries.accept(ModItems.VESPERITE_AXE);
 						entries.accept(ModItems.VESPERITE_SHOVEL);
-						entries.accept(ModItems.VESPERITE_SWORD);
 						entries.accept(ModItems.VESPERITE_HOE);
-						entries.accept(ModItems.BOTTLED_MOTH);
-						entries.accept(ModItems.VESPERITE_LANTERN);
-
 					})
-					.build()
-	);
+					.build());
 
 	@Override
 	public void onInitialize() {
 		GeckoLibConstants.init();
+
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBiomes.registerBiomes();
 		ModParticles.registerParticles();
 		ModTreeDecoratorTypes.register();
-		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRuleData.makeRules());
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID,
+				ModSurfaceRuleData.makeRules());
 		ModEntities.registerModEntities();
 		ModEntitySpawns.addSpawns();
 		FabricDefaultAttributeRegistry.register(
 				ModEntities.VELVET_MOTH,
 				VelvetMothEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(
+				ModEntities.GLOOM_STALKER,
+				GloomStalkerEntity.createAttributes());
+
 		EntityRenderers.register(ModEntities.VELVET_MOTH, VelvetMothRenderer::new);
+		EntityRenderers.register(ModEntities.GLOOM_STALKER, GloomStalkerRenderer::new);
 		// Note: TerraBlender registration is now handled in VesperTerraBlender.java
 
 		LOGGER.info("Vesper Wilds Initialized!");

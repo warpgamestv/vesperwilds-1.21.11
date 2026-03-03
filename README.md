@@ -3,13 +3,13 @@
 ![Fabric](https://img.shields.io/badge/Loader-Fabric-beige?style=for-the-badge)
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21-darkgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-ALPHA-purple?style=for-the-badge)
-<a href="https://www.curseforge.com/minecraft/mc-mods/vesper-wilds"><img src="https://img.shields.io/badge/CurseForge-0.0.24-orange?style=for-the-badge" alt="CurseForge"/></a>
-<a href="https://modrinth.com/mod/vesper-wilds"><img src="https://img.shields.io/badge/Modrinth-0.0.24-green?style=for-the-badge" alt="Modrinth"/></a>
+<a href="https://www.curseforge.com/minecraft/mc-mods/vesper-wilds"><img src="https://img.shields.io/badge/CurseForge-0.0.241-orange?style=for-the-badge" alt="CurseForge"/></a>
+<a href="https://modrinth.com/mod/vesper-wilds"><img src="https://img.shields.io/badge/Modrinth-0.0.241-green?style=for-the-badge" alt="Modrinth"/></a>
 
 **A Minecraft Fabric Mod adding a touch of eternal twilight to the Overworld.**
 
 ## 👋 About the Project
-**Vesper Wilds** is a passion project created by **WarpGames** as part of a journey into Minecraft modding and Java development.
+**Vesper Wilds** is a passion project created by **WarpGamesTV** as part of a journey into Minecraft modding and Java development.
 
 While fully functional, this is a **"Hobby Mod"** created to explore the Fabric API, Data Generation, and biome manipulation. Features are developed as I learn new coding concepts. Feedback is welcome, but please be patient with updates!
 
@@ -47,7 +47,7 @@ A complete family of building blocks with a distinct lavender/twilight palette:
 
 ## ⚙️ Installation (For Players)
 
-1.  Download and install **Minecraft 1.21**.
+1.  Download and install **Minecraft 1.21.11**.
 2.  Install the latest [Fabric Loader](https://fabricmc.net/).
 3.  Download the **Fabric API** mod and **terrablender** and place it in your `.minecraft/mods` folder.
 4.  Download the latest release of **Vesper Wilds** from the [Releases] tab (or Modrinth/CurseForge) and place it in your `mods` folder.
