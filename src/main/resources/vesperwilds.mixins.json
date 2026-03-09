@@ -5,8 +5,11 @@
 	"mixins": [
 		"ExampleMixin",
 		"NaturalSpawnerMixin",
-		"PlayerTwilightResonanceMixin"
+		"PlayerTwilightResonanceMixin",
+		"CropBlockMixin",
+		"EnvironmentAttributeSystemMixin"
 	],
+	"client": [],
 	"injectors": {
 		"defaultRequire": 1
 	},

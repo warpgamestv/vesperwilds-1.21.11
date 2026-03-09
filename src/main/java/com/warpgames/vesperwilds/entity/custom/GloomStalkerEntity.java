@@ -43,8 +43,20 @@ public class GloomStalkerEntity extends Monster implements GeoEntity, FlyingAnim
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.FLYING_SPEED, 0.5f)
                 .add(Attributes.MOVEMENT_SPEED, 0.35D)
-                .add(Attributes.ATTACK_DAMAGE, 4.0D)
                 .add(Attributes.FOLLOW_RANGE, 24.0D);
+    }
+
+    public static boolean checkGloomStalkerSpawnRules(EntityType<? extends Monster> type,
+            net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.entity.EntitySpawnReason spawnType,
+            BlockPos pos, RandomSource random) {
+        if (com.warpgames.vesperwilds.event.VelvetEclipseManager.isEclipseActive()
+                && level.canSeeSkyFromBelowWater(pos)) {
+            // Bypass the darkness check, but still require peaceful difficulty check and
+            // block suitability
+            return level.getDifficulty() != net.minecraft.world.Difficulty.PEACEFUL
+                    && checkMobSpawnRules(type, level, spawnType, pos, random);
+        }
+        return Monster.checkMonsterSpawnRules(type, level, spawnType, pos, random);
     }
 
     @Override

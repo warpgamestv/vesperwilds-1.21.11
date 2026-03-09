@@ -1,2 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	VesperWilds/Tags for minecraft:item
 54cd3e52ded1aafd06b80c0f7066f0a2d1d1b7c6 data/c/tags/item/raw_materials/vesperite.json
+32670855bc28063e68f602fb49db7963f2653e9b data/minecraft/tags/item/axes.json
+a0cbc97f50907d470fdcae6970f3e91d770e8f3c data/minecraft/tags/item/hoes.json
+f26ce206335dee382d7231aee0600802efd2414f data/minecraft/tags/item/pickaxes.json
+1ef3c2f2c50c549a91cab83450f80eab1f4aed7d data/minecraft/tags/item/shovels.json
+acc659ca7e61b7e39e97771474dc5c888fc0d480 data/minecraft/tags/item/swords.json

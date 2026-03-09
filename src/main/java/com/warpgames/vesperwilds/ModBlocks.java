@@ -1,6 +1,8 @@
 package com.warpgames.vesperwilds;
 
 import com.warpgames.vesperwilds.block.custom.EmberShelfFungusBlock;
+import com.warpgames.vesperwilds.block.custom.GlintBerryBushBlock;
+import com.warpgames.vesperwilds.block.custom.VelvetLeavesBlock;
 import com.warpgames.vesperwilds.block.custom.VesperiteLanternBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

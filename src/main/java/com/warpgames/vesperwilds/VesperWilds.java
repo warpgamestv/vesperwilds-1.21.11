@@ -4,10 +4,15 @@ import com.warpgames.vesperwilds.entity.client.GloomStalkerRenderer;
 import com.warpgames.vesperwilds.entity.client.VelvetMothRenderer;
 import com.warpgames.vesperwilds.entity.custom.GloomStalkerEntity;
 import com.warpgames.vesperwilds.entity.custom.VelvetMothEntity;
+import com.warpgames.vesperwilds.enchantment.ModEnchantments;
+
 import com.warpgames.vesperwilds.worldgen.ModConfiguredFeatures;
 import com.warpgames.vesperwilds.worldgen.ModEntitySpawns;
 import com.warpgames.vesperwilds.worldgen.ModSurfaceRuleData;
 import com.warpgames.vesperwilds.worldgen.tree.ModTreeDecoratorTypes;
+import com.warpgames.vesperwilds.event.VelvetEclipseManager;
+import com.warpgames.vesperwilds.network.ModMessages;
+import com.warpgames.vesperwilds.command.VelvetEclipseCommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -99,6 +104,7 @@ public class VesperWilds implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModEnchantments.registerModEnchantments();
 		ModBiomes.registerBiomes();
 		ModParticles.registerParticles();
 		ModTreeDecoratorTypes.register();
@@ -116,6 +122,10 @@ public class VesperWilds implements ModInitializer {
 		EntityRenderers.register(ModEntities.VELVET_MOTH, VelvetMothRenderer::new);
 		EntityRenderers.register(ModEntities.GLOOM_STALKER, GloomStalkerRenderer::new);
 		// Note: TerraBlender registration is now handled in VesperTerraBlender.java
+
+		VelvetEclipseManager.init();
+		ModMessages.registerS2CPackets();
+        VelvetEclipseCommand.register();
 
 		LOGGER.info("Vesper Wilds Initialized!");
 	}

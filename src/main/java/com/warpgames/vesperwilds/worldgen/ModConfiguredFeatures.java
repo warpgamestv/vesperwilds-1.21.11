@@ -1,6 +1,6 @@
 package com.warpgames.vesperwilds.worldgen;
 
-import com.warpgames.vesperwilds.GlintBerryBushBlock;
+import com.warpgames.vesperwilds.block.custom.GlintBerryBushBlock;
 import com.warpgames.vesperwilds.ModBlocks;
 import com.warpgames.vesperwilds.VesperWilds;
 import com.warpgames.vesperwilds.block.custom.EmberShelfFungusBlock;

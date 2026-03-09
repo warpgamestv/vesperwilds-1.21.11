@@ -61,26 +61,9 @@ public class VelvetMothEntity extends PathfinderMob implements GeoEntity, Flying
                 .add(Attributes.FOLLOW_RANGE, 32.0D);// Detection range
     }
 
-    private static final int SHED_TIME = 6000;
-
     @Override
     public void aiStep() {
         super.aiStep();
-
-        // Server-side only check
-        if (this.level() instanceof ServerLevel serverLevel) {
-
-            // 1 in 6000 chance
-            if (this.random.nextInt(SHED_TIME) == 0) {
-
-                // CORRECT FORMAT: spawnAtLocation(ServerLevel, ItemStack)
-                this.spawnAtLocation(serverLevel, new ItemStack(Items.STRING));
-
-                // Optional Sound
-                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F,
-                        (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            }
-        }
     }
 
     // 4. Override Navigation to handle 3D paths

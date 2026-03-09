@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vesper_wilds:velvet_cloak"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_velvet_fuzz": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vesper_wilds:velvet_fuzz"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_velvet_fuzz"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vesper_wilds:velvet_cloak"
+    ]
+  }
+}

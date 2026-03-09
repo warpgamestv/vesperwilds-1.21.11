@@ -66,5 +66,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.BOTTLED_MOTH, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.GLOOM_STALKER_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.VELVET_MOTH_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.VELVET_FUZZ, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.VELVET_CLOAK, ModelTemplates.FLAT_ITEM);
     }
 }

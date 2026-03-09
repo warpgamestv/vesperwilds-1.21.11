@@ -69,9 +69,15 @@ public class ModLangProvider extends FabricLanguageProvider {
         builder.add(ModItems.BOTTLED_MOTH, "Bottled Moth");
         builder.add(ModItems.VELVET_MOTH_SPAWN_EGG, "Velvet Moth Spawn Egg");
         builder.add(ModItems.GLOOM_STALKER_SPAWN_EGG, "Gloom Stalker Spawn Egg");
+        builder.add(ModItems.VELVET_FUZZ, "Velvet Fuzz");
+        builder.add(ModItems.VELVET_CLOAK, "Velvet Cloak");
 
         // --- Entities ---
         builder.add(com.warpgames.vesperwilds.ModEntities.GLOOM_STALKER, "Gloom Stalker");
+
+        // --- Enchantments ---
+        builder.add("enchantment.vesperwilds.penumbra", "Penumbra");
+        builder.add("enchantment.vesperwilds.penumbra.desc", "Increases attack damage when fighting in the dark.");
 
         // --- Biomes ---
         builder.add("biome.vesper_wilds.vesper_grove", "Vesper Grove");

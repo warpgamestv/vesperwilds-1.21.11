@@ -25,6 +25,26 @@ public class ModItems {
         public static final Item BOTTLED_MOTH = registerItem("bottled_moth",
                         new Item(new Item.Properties().stacksTo(16).setId(BOTTLED_MOTH_KEY)));
 
+        public static final ResourceKey<Item> VELVET_FUZZ_KEY = ResourceKey.create(
+                        BuiltInRegistries.ITEM.key(),
+                        Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_fuzz"));
+
+        public static final Item VELVET_FUZZ = registerItem("velvet_fuzz",
+                        new Item(new Item.Properties().setId(VELVET_FUZZ_KEY)));
+
+        public static final ResourceKey<Item> VELVET_CLOAK_KEY = ResourceKey.create(
+                        BuiltInRegistries.ITEM.key(),
+                        Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_cloak"));
+
+        public static final Item VELVET_CLOAK = registerItem("velvet_cloak",
+                        new com.warpgames.vesperwilds.item.custom.VelvetCloakItem(
+                                        new Item.Properties().setId(VELVET_CLOAK_KEY)
+                                                        .humanoidArmor(com.warpgames.vesperwilds.item.ModArmorMaterials.VELVET
+                                                                        .value(),
+                                                                        net.minecraft.world.item.equipment.ArmorType.CHESTPLATE)
+                                                        .durability(net.minecraft.world.item.equipment.ArmorType.CHESTPLATE
+                                                                        .getDurability(15))));
+
         public static final ResourceKey<Item> VELVET_MOTH_SPAWN_EGG_KEY = ResourceKey.create(
                         BuiltInRegistries.ITEM.key(),
                         Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "velvet_moth_spawn_egg"));

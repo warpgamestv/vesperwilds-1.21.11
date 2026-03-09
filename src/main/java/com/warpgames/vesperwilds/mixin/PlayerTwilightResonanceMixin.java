@@ -28,16 +28,19 @@ public class PlayerTwilightResonanceMixin {
                 player.getMainHandItem().is(ModItems.VESPERITE_HOE);
 
         if (isVesperiteMiningTool) {
+            boolean eclipseSurge = com.warpgames.vesperwilds.event.VelvetEclipseManager.isEclipseActive();
             // Check light level at player's position
             int lightLevel = player.level().getMaxLocalRawBrightness(player.blockPosition());
 
-            if (lightLevel < 7) {
+            if (lightLevel < 7 || eclipseSurge) {
                 float originalSpeed = cir.getReturnValue();
                 // We don't boost 1.0F speeds (like mining obsidian with your hand)
-                // We only boost actual fast-mining speeds the tool provides to blocks it can
-                // harvest
                 if (originalSpeed > 1.0F) {
-                    cir.setReturnValue(originalSpeed * 1.2f);
+                    if (eclipseSurge) {
+                        cir.setReturnValue(originalSpeed * 2.0f); // Massive surge during Eclipse
+                    } else {
+                        cir.setReturnValue(originalSpeed * 1.2f); // Normal twilight resonance
+                    }
                 }
             }
         }
@@ -55,10 +58,15 @@ public class PlayerTwilightResonanceMixin {
                 player.getMainHandItem().is(ModItems.VESPERITE_AXE);
 
         if (isVesperiteWeapon) {
+            boolean eclipseSurge = com.warpgames.vesperwilds.event.VelvetEclipseManager.isEclipseActive();
             int lightLevel = player.level().getMaxLocalRawBrightness(player.blockPosition());
 
-            if (lightLevel < 7) {
-                return baseDamage + 2.0F;
+            if (lightLevel < 7 || eclipseSurge) {
+                if (eclipseSurge) {
+                    return baseDamage + 6.0F; // Massive surge during Eclipse
+                } else {
+                    return baseDamage + 2.0F; // Normal twilight resonance
+                }
             }
         }
         return baseDamage;

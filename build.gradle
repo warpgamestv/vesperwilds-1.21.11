@@ -89,3 +89,8 @@ sourceSets {
 		}
 	}
 }
+
+task executeReflector(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.warpgames.vesperwilds.Reflector'
+}

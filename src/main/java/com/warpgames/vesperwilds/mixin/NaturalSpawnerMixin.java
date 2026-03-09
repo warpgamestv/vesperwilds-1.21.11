@@ -33,7 +33,8 @@ public class NaturalSpawnerMixin {
         EntityType<?> entityType = spawnerData.type();
 
         // 2. Safety Check
-        if (entityType == null) return;
+        if (entityType == null)
+            return;
 
         // 3. Filter: Only stop MONSTERS
         if (entityType.getCategory() == MobCategory.MONSTER) {
@@ -43,7 +44,8 @@ public class NaturalSpawnerMixin {
             BlockPos minPos = pos.offset(-radius, -radius, -radius);
             BlockPos maxPos = pos.offset(radius, radius, radius);
 
-            // We use serverLevel to check block states because 'levelReader' isn't passed here,
+            // We use serverLevel to check block states because 'levelReader' isn't passed
+            // here,
             // but ServerLevel extends it, so it works perfectly.
             for (BlockPos checkPos : BlockPos.betweenClosed(minPos, maxPos)) {
                 if (serverLevel.getBlockState(checkPos).is(ModBlocks.VESPERITE_LANTERN)) {
@@ -51,6 +53,38 @@ public class NaturalSpawnerMixin {
                     return;
                 }
             }
+        }
+    }
+
+    @Inject(method = "mobsAt", at = @At("RETURN"), cancellable = true)
+    private static void injectEclipseMobs(
+            ServerLevel serverLevel,
+            StructureManager structureManager,
+            ChunkGenerator chunkGenerator,
+            net.minecraft.world.entity.MobCategory mobCategory,
+            BlockPos blockPos,
+            net.minecraft.core.Holder<net.minecraft.world.level.biome.Biome> holder,
+            CallbackInfoReturnable<net.minecraft.util.random.WeightedList<MobSpawnSettings.SpawnerData>> cir) {
+
+        if (mobCategory == net.minecraft.world.entity.MobCategory.MONSTER
+                && com.warpgames.vesperwilds.event.VelvetEclipseManager.isEclipseActive()) {
+            net.minecraft.util.random.WeightedList<MobSpawnSettings.SpawnerData> original = cir.getReturnValue();
+            if (original == null) {
+                original = MobSpawnSettings.EMPTY_MOB_LIST;
+            }
+
+            net.minecraft.util.random.WeightedList.Builder<MobSpawnSettings.SpawnerData> builder = net.minecraft.util.random.WeightedList
+                    .builder();
+            for (net.minecraft.util.random.Weighted<MobSpawnSettings.SpawnerData> entry : original.unwrap()) {
+                builder.add(entry.value(), entry.weight());
+            }
+
+            // Add Gloom Stalker to the spawn pool during the eclipse with a common weight
+            // (50).
+            builder.add(new MobSpawnSettings.SpawnerData(com.warpgames.vesperwilds.ModEntities.GLOOM_STALKER, 1, 2),
+                    50);
+
+            cir.setReturnValue(builder.build());
         }
     }
 }
