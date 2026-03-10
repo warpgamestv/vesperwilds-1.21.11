@@ -3,7 +3,6 @@
 	"package": "com.warpgames.vesperwilds.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin",
 		"NaturalSpawnerMixin",
 		"PlayerTwilightResonanceMixin",
 		"CropBlockMixin",

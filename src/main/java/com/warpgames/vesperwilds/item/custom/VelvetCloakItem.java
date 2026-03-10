@@ -8,11 +8,48 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib.animatable.GeoItem;
+import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib.animatable.client.GeoRenderProvider;
+import software.bernie.geckolib.animatable.manager.AnimatableManager;
 
-public class VelvetCloakItem extends Item {
+import java.util.function.Consumer;
+
+public class VelvetCloakItem extends Item implements GeoItem {
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public VelvetCloakItem(Properties properties) {
         super(properties);
+        GeoItem.registerSyncedAnimatable(this);
+    }
+
+    @Override
+    public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
+        consumer.accept(new GeoRenderProvider() {
+            private com.warpgames.vesperwilds.item.client.VelvetCloakRenderer<?> renderer;
+
+            @Override
+            public software.bernie.geckolib.renderer.GeoArmorRenderer<?, ?> getGeoArmorRenderer(
+                    net.minecraft.world.item.ItemStack itemStack,
+                    net.minecraft.world.entity.EquipmentSlot equipmentSlot) {
+                if (this.renderer == null) {
+                    this.renderer = new com.warpgames.vesperwilds.item.client.VelvetCloakRenderer<>();
+                }
+                return this.renderer;
+            }
+        });
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        // No animations for the cloak currently
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
     }
 
     @Override
