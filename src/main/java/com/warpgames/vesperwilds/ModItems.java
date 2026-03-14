@@ -250,7 +250,7 @@ public class ModItems {
                                                 java.util.function.Consumer<net.minecraft.network.chat.Component> consumer,
                                                 net.minecraft.world.item.TooltipFlag tooltipFlag) {
                                         consumer.accept(net.minecraft.network.chat.Component
-                                                        .translatable("item.vesperwilds.vesperite_sword.tooltip")
+                                                        .translatable("item.vesper_wilds.vesperite_sword.tooltip")
                                                         .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
                                         super.appendHoverText(stack, context, display, consumer, tooltipFlag);
                                 }
@@ -271,7 +271,7 @@ public class ModItems {
                                                 java.util.function.Consumer<net.minecraft.network.chat.Component> consumer,
                                                 net.minecraft.world.item.TooltipFlag tooltipFlag) {
                                         consumer.accept(net.minecraft.network.chat.Component
-                                                        .translatable("item.vesperwilds.vesperite_shovel.tooltip")
+                                                        .translatable("item.vesper_wilds.vesperite_shovel.tooltip")
                                                         .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
                                         super.appendHoverText(stack, context, display, consumer, tooltipFlag);
                                 }
@@ -292,7 +292,7 @@ public class ModItems {
                                                 java.util.function.Consumer<net.minecraft.network.chat.Component> consumer,
                                                 net.minecraft.world.item.TooltipFlag tooltipFlag) {
                                         consumer.accept(net.minecraft.network.chat.Component
-                                                        .translatable("item.vesperwilds.vesperite_pickaxe.tooltip")
+                                                        .translatable("item.vesper_wilds.vesperite_pickaxe.tooltip")
                                                         .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
                                         super.appendHoverText(stack, context, display, consumer, tooltipFlag);
                                 }
@@ -313,10 +313,10 @@ public class ModItems {
                                                 java.util.function.Consumer<net.minecraft.network.chat.Component> consumer,
                                                 net.minecraft.world.item.TooltipFlag tooltipFlag) {
                                         consumer.accept(net.minecraft.network.chat.Component
-                                                        .translatable("item.vesperwilds.vesperite_axe.tooltip_mining")
+                                                        .translatable("item.vesper_wilds.vesperite_axe.tooltip_mining")
                                                         .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
                                         consumer.accept(net.minecraft.network.chat.Component
-                                                        .translatable("item.vesperwilds.vesperite_axe.tooltip_combat")
+                                                        .translatable("item.vesper_wilds.vesperite_axe.tooltip_combat")
                                                         .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
                                         super.appendHoverText(stack, context, display, consumer, tooltipFlag);
                                 }
@@ -337,7 +337,7 @@ public class ModItems {
                                                 java.util.function.Consumer<net.minecraft.network.chat.Component> consumer,
                                                 net.minecraft.world.item.TooltipFlag tooltipFlag) {
                                         consumer.accept(net.minecraft.network.chat.Component
-                                                        .translatable("item.vesperwilds.vesperite_hoe.tooltip")
+                                                        .translatable("item.vesper_wilds.vesperite_hoe.tooltip")
                                                         .withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
                                         super.appendHoverText(stack, context, display, consumer, tooltipFlag);
                                 }

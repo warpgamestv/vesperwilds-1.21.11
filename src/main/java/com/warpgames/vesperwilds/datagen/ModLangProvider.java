@@ -53,17 +53,17 @@ public class ModLangProvider extends FabricLanguageProvider {
         builder.add(ModItems.VESPER_STONE_BRICK_WALL, "Vesper Stone Brick Wall");
         builder.add(ModItems.VESPERITE_INGOT, "Vesperite Ingot");
         builder.add(ModItems.VESPERITE_SWORD, "Vesperite Sword");
-        builder.add("item.vesperwilds.vesperite_sword.tooltip", "Twilight Resonance: +2 Damage in low light");
+        builder.add("item.vesper_wilds.vesperite_sword.tooltip", "Twilight Resonance: +2 Damage in low light");
         builder.add(ModItems.VESPERITE_PICKAXE, "Vesperite Pickaxe");
-        builder.add("item.vesperwilds.vesperite_pickaxe.tooltip", "Twilight Resonance: +20% Mining Speed in low light");
+        builder.add("item.vesper_wilds.vesperite_pickaxe.tooltip", "Twilight Resonance: +20% Mining Speed in low light");
         builder.add(ModItems.VESPERITE_AXE, "Vesperite Axe");
-        builder.add("item.vesperwilds.vesperite_axe.tooltip_mining",
+        builder.add("item.vesper_wilds.vesperite_axe.tooltip_mining",
                 "Twilight Resonance: +20% Mining Speed in low light");
-        builder.add("item.vesperwilds.vesperite_axe.tooltip_combat", "Twilight Resonance: +2 Damage in low light");
+        builder.add("item.vesper_wilds.vesperite_axe.tooltip_combat", "Twilight Resonance: +2 Damage in low light");
         builder.add(ModItems.VESPERITE_SHOVEL, "Vesperite Shovel");
-        builder.add("item.vesperwilds.vesperite_shovel.tooltip", "Twilight Resonance: +20% Mining Speed in low light");
+        builder.add("item.vesper_wilds.vesperite_shovel.tooltip", "Twilight Resonance: +20% Mining Speed in low light");
         builder.add(ModItems.VESPERITE_HOE, "Vesperite Hoe");
-        builder.add("item.vesperwilds.vesperite_hoe.tooltip", "Twilight Resonance: +20% Mining Speed in low light");
+        builder.add("item.vesper_wilds.vesperite_hoe.tooltip", "Twilight Resonance: +20% Mining Speed in low light");
         builder.add(ModItems.VESPERITE_NUGGET, "Vesperite Nugget");
         builder.add(ModItems.VESPERITE_LANTERN, "Vesperite Lantern");
         builder.add(ModItems.BOTTLED_MOTH, "Bottled Moth");
@@ -73,13 +73,17 @@ public class ModLangProvider extends FabricLanguageProvider {
         builder.add(ModItems.VELVET_CLOAK, "Velvet Cloak");
 
         // --- Entities ---
+        builder.add(com.warpgames.vesperwilds.ModEntities.VELVET_MOTH, "Velvet Moth");
         builder.add(com.warpgames.vesperwilds.ModEntities.GLOOM_STALKER, "Gloom Stalker");
 
         // --- Enchantments ---
-        builder.add("enchantment.vesperwilds.penumbra", "Penumbra");
-        builder.add("enchantment.vesperwilds.penumbra.desc", "Increases attack damage when fighting in the dark.");
+        builder.add("enchantment.vesper_wilds.penumbra", "Penumbra");
+        builder.add("enchantment.vesper_wilds.penumbra.desc", "Increases attack damage when fighting in the dark.");
 
         // --- Biomes ---
         builder.add("biome.vesper_wilds.vesper_grove", "Vesper Grove");
+
+        // --- Item Tags ---
+        builder.add("tag.item.vesper_wilds.vesperite_tool_materials", "Vesperite Tool Materials");
     }
 }
