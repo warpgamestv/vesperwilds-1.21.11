@@ -78,6 +78,7 @@ public class VesperWilds implements ModInitializer {
 						entries.accept(ModItems.VESPERITE_INGOT);
 						entries.accept(ModItems.VESPERITE_NUGGET);
 						entries.accept(ModItems.BOTTLED_MOTH);
+						entries.accept(ModItems.VELVET_FUZZ);
 						entries.accept(ModItems.GLOOM_STALKER_SPAWN_EGG);
 						entries.accept(ModItems.VELVET_MOTH_SPAWN_EGG);
 					})
@@ -95,6 +96,7 @@ public class VesperWilds implements ModInitializer {
 						entries.accept(ModItems.VESPERITE_AXE);
 						entries.accept(ModItems.VESPERITE_SHOVEL);
 						entries.accept(ModItems.VESPERITE_HOE);
+						entries.accept(ModItems.VELVET_CLOAK);
 					})
 					.build());
 

@@ -7,8 +7,8 @@
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 3,
-				"visible_bounds_height": 3.5,
-				"visible_bounds_offset": [0, 1.25, 0]
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
 			},
 			"bones": [
 				{
@@ -25,7 +25,7 @@
 					"parent": "armorBody",
 					"pivot": [0, 24, 0],
 					"cubes": [
-						{"origin": [-5, 22, -3], "size": [10, 2, 6], "inflate": 0.25, "uv": [0, 15]}
+						{"origin": [-5, 22, -1], "size": [10, 2, 4], "inflate": 0.25, "uv": [0, 15]}
 					]
 				},
 				{
@@ -34,7 +34,7 @@
 					"pivot": [0, 23.5, 2.5],
 					"rotation": [5, 0, 0],
 					"cubes": [
-						{"origin": [-6, 12, 2.5], "size": [12, 12, 2], "uv": [0, 25]}
+						{"origin": [-6, 12, 2.5], "size": [12, 12, 2], "uv": [0, 21]}
 					]
 				},
 				{
